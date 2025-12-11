@@ -17,5 +17,35 @@ export function GameProvider({ children }) {
     const newHoles = freshHoles();
     const randomIndex = Math.floor(Math.random() * newHoles.length);
     newHoles[randomIndex].hasMole = true;
+    setHoles(newHoles);
+  }
+
+  function startGame() {
+    setScore(0);
+    setIsPlaying(true);
+    placeRandomMole();
+  }
+
+  // Restart means go back to welcome screen; Keep score reset on next start.
+  function restartGame() {
+    setIsPlaying(false);
+    setScore(0);
+    setHoles(freshHoles());
+  }
+
+  // Called when a mole is clicked
+  function whack(holeId) {
+    // Increment score
+    setScore((s) => s + 1);
+
+    // Move mole to a new random hole.
+    // Use new array to avoid mutating state.
+    setScore((prev) => {
+      // Choose a random index
+      const len = prev.length;
+      let nextIndex = Math.floor(Math.random() * len);
+
+      // Return brand new array with hasMole true only at nextIndex.
+    });
   }
 }
