@@ -1,4 +1,4 @@
-import react, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 import { holes as initialHoles } from "../data.js";
 
 function freshHoles() {
@@ -49,4 +49,18 @@ export function GameProvider({ children }) {
       return prev.map((h, i) => ({ ...h, hasMole: i === nextIndex }));
     });
   }
+
+  return (
+    <GameContext.Provider
+      value={{ holes, score, isPlaying, startGame, restartGame, whack }}
+    >
+      {children}
+    </GameContext.Provider>
+  );
+}
+
+export function useGame() {
+  const ctx = useContext(GameContext);
+  if (!ctx) throw new Error("useGame must be used inside GameProvider");
+  return ctx;
 }
