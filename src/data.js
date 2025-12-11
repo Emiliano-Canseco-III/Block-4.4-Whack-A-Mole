@@ -1,3 +1,4 @@
+// Creates an array of hole objects and exports it.
 export const holes = [
   { id: 1, hasMole: false },
   { id: 2, hasMole: false },
