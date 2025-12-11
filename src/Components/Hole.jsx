@@ -1,4 +1,4 @@
-import { useGame } from "./GameContext.jsx";
+import { useGame } from "react";
 
 export default function Hole({ hole }) {
   const { whack } = useGame();

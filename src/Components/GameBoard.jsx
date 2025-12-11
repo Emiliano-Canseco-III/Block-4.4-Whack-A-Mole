@@ -1,4 +1,4 @@
-import { useGame } from "./GameContext.jsx";
+import { useGame } from "react";
 import Hole from "./Hole.jsx";
 
 export default function GameBoard() {
