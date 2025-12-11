@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 import { holes as initialHoles } from "../data.js";
 
 function freshHoles() {
@@ -34,7 +34,7 @@ export function GameProvider({ children }) {
   }
 
   // Called when a mole is clicked
-  function whack(holeId) {
+  function whack() {
     // Increment score
     setScore((s) => s + 1);
 
@@ -57,10 +57,4 @@ export function GameProvider({ children }) {
       {children}
     </GameContext.Provider>
   );
-}
-
-export function useGame() {
-  const ctx = useContext(GameContext);
-  if (!ctx) throw new Error("useGame must be used inside GameProvider");
-  return ctx;
 }
