@@ -1,19 +1,19 @@
-import { useState } from "react";
-import { holes } from "../data.js";
+import { GameProvider, useGame } from "./GameContext.jsx";
+import Welcome from "./Welcome.jsx";
+import GameBoard from "./GameBoard.jsx";
+
+function Content() {
+  const { isPlaying } = useGame();
+  return isPlaying ? <GameBoard /> : <Welcome />;
+}
 
 export default function App() {
-  const [holeData, setHoleData] = useState(holes);
-
   return (
-    <main>
-      <h1>Whack-A-Mole</h1>
-      <section className="game-board">
-        {holeData.map((hole) => (
-          <div key={hole.id} className="hole">
-            {hole.hasMole ? "🐹" : ""}
-          </div>
-        ))}
-      </section>
-    </main>
+    <GameProvider>
+      <main style={{ padding: 20 }}>
+        <h1>Whack-A-Mole</h1>
+        <Content />
+      </main>
+    </GameProvider>
   );
 }
