@@ -1,9 +1,18 @@
+.game-board {
+  max-width: 480px;
+  margin-top: 12px;
+}
 
 .hole {
+  width: 140px;
+  height: 120px;
   background: url("/hole.png") no-repeat center/contain;
+  border-radius: 8px;
+  box-shadow: insert 0 -6px 8px rgba(0, 0, 0, 0.15);
 }
 
-.mole {
+.hole.mole {
   background-image: url("/mole.png");
+  background-size: contain;
+  background-position: center;
 }
-
