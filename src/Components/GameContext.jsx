@@ -40,7 +40,7 @@ export function GameProvider({ children }) {
 
     // Move mole to a new random hole.
     // Use new array to avoid mutating state.
-    setScore((prev) => {
+    setHoles((prev) => {
       // Choose a random index
       const len = prev.length;
       let nextIndex = Math.floor(Math.random() * len);
