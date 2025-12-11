@@ -46,6 +46,7 @@ export function GameProvider({ children }) {
       let nextIndex = Math.floor(Math.random() * len);
 
       // Return brand new array with hasMole true only at nextIndex.
+      return prev.map((h, i) => ({ ...h, hasMole: i === nextIndex }));
     });
   }
 }
