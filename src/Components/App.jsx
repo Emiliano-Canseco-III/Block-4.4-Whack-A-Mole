@@ -1,5 +1,5 @@
 import { GameProvider } from "./GameContext.jsx";
-import { useGame } from "./useGame.jsx";
+import useGame from "./useGame.jsx";
 import Welcome from "./Welcome.jsx";
 import GameBoard from "./GameBoard.jsx";
 
