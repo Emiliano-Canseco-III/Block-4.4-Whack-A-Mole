@@ -1,7 +1,7 @@
-import { GameProvider } from "./Components/GameContext.jsx";
-import { useGame } from "./Components/GameContext.jsx";
-import Welcome from "./Components/Welcome.jsx";
-import GameBoard from "./Components/GameBoard.jsx";
+import { GameProvider } from "./GameContext.jsx";
+import { useGame } from "./useGame.jsx";
+import Welcome from "./Welcome.jsx";
+import GameBoard from "./GameBoard.jsx";
 import "./App.css";
 
 function Content() {

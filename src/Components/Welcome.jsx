@@ -1,4 +1,4 @@
-import { useGame } from "./GameContext.jsx";
+import { useGame } from "./useGame.jsx";
 
 export default function Welcome() {
   const { startGame } = useGame();

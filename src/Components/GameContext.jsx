@@ -1,11 +1,10 @@
-import { createContext, useState, useContext } from "react";
+import { useState } from "react";
 import { holes as initialHoles } from "../data.js";
+import { GameContext } from "./useGame.jsx";
 
 function freshHoles() {
   return initialHoles.map((h) => ({ ...h }));
 }
-
-const GameContext = createContext();
 
 export function GameProvider({ children }) {
   const [holes, setHoles] = useState(() => freshHoles());
@@ -57,12 +56,4 @@ export function GameProvider({ children }) {
       {children}
     </GameContext.Provider>
   );
-}
-
-export function useGame() {
-  const context = useContext(GameContext);
-  if (!context) {
-    throw new Error("useGame must be used within a GameProvider");
-  }
-  return context;
 }
