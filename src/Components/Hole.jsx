@@ -23,9 +23,6 @@ export default function Hole({ hole }) {
         alignItems: "center",
         cursor: hole.hasMole ? "pointer" : "default",
       }}
-    >
-      {/* visual fallback without the CSS background */}
-      {hole.hasMole ? "🐹" : ""}
-    </div>
+    ></div>
   );
 }
