@@ -13,7 +13,15 @@ function App() {
     <GameProvider>
       <div className="App">
         <main style={{ padding: 20 }}>
-          <h1>Whack-A-Mole</h1>
+          <h1
+            style={{
+              textAlign: "center",
+              fontSize: 32,
+              marginBottom: 24,
+            }}
+          >
+            Whack-A-Mole
+          </h1>
           <Content />
         </main>
       </div>

@@ -1,11 +1,19 @@
 .game-board {
   max-width: 480px;
-  margin-top: 12px;
+  margin-top: auto;
+  margin-right: auto;
+  margin-left: auto;
+
+  justify-content: center;
+  align-items: center;
 }
 
 .hole {
   width: 140px;
   height: 120px;
+  justify-content: center;
+  align-items: center;
+
   background: url("/hole.png") no-repeat center/contain;
   border-radius: 8px;
   box-shadow: insert 0 -6px 8px rgba(0, 0, 0, 0.15);
